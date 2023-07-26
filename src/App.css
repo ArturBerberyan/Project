@@ -1,38 +1,272 @@
+body {
+    margin: 0; padding: 0;
+    top: 0;
+}
+
 .App {
-  text-align: center;
+    margin-top: 0px;
+    min-height: 100vh;
+    background-image: linear-gradient(79deg, #e48621, #c1ab1b 48%, #e1a415);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.login, .register {
+    text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.auth-form-container, .login-form, .register-form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.auth-form-container {
+    padding: 5rem;
+    border: 1px solid white;
+    border-radius: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+label {
+    text-align: left;
+    padding: 0.25rem 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+input {
+    margin: 0.5rem 0;
+    padding: 1rem;
+    border: none;
+    border-radius: 10px;
 }
+
+button {
+    border: none;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+.link-btn {
+    background: none;
+    color: rgb(68, 47, 47);
+    text-decoration: underline;
+}
+
+.error {
+    color: red;
+    text-align: left;
+    padding: 0.25rem 0;
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+}
+
+a {
+    margin: 0 auto;
+    font-size: 1.7rem;
+    color: white;
+    border: none;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    width: 60%;
+    margin-top: 10px;
+}
+
+.active{
+    border-bottom: .1rem solid white;
+};
+
+.home {
+    width: 100%;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+    margin-top: 30px;
+}
+
+.catrgory-block {
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+    color: white;
+}
+
+.category-img {
+    width: max-content;
+}
+
+.detail {
+    border-bottom: 1px solid white;
+}
+
+.meal-list {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+    margin-top: 30px;
+}
+
+.meal-item {
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+    color: white;
+}
+
+.meal-img {
+    width: 80%;
+    cursor: pointer;
+}
+
+.item-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    color: white;
+    margin-bottom: 30px;
+}
+
+.item-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 500px;
+}
+
+.item-name {
+    display: flex;
+    margin-right: 2rem;
+    margin-left: 2rem;
+}
+
+.about-container {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(image/food.png);
+}
+
+.about {
+    margin: 0 auto;
+    width: 50%;
+    text-align: center;
+    color: white;
+}
+
+.title {
+    margin-top: 2rem;
+}
+
+p {
+    font-size: 1.2rem;
+}
+
+.go-menu {
+    border: none;
+    background-color: rgb(255, 187, 0);
+    padding: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+    font-size: 1rem;
+    font-family: Georgia, serif;
+    margin-bottom: 30px;
+}
+
+.contact-page {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2rem;
+    margin-top: 7px;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+
+.contact {
+    text-align: center;
+    color: white;
+}
+
+.feedback {
+    text-align: center;
+    color: white;
+}
+
+.contact-form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.fname, .lname, .subject {
+    color: white;
+}
+
+.subject-text {
+    margin-bottom: 5px;
+}
+
+.submit {
+    border: none;
+    background-color: rgb(255, 187, 0);
+    padding: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+    font-size: 1rem;
+    font-family: Georgia, serif;
+}
+
+.footer-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    border: 1px solid white;
+}
+
+.footer {
+    margin: 0 auto;
+    color: white;
+    font-size: 1.4rem;
+    font-family: Georgia, serif;
+    border: 1px solid white;
+    padding: .5rem;
+    cursor: pointer;
+}
+
+.notfound {
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1rem;
+    font-family: Georgia, serif;
+    color: white;
+}
+
+.grid {
+    display: contents;
+    display: inline-block;
+}
+
+.back {
+    border: none;
+    background-color: rgb(255, 187, 0);
+    padding: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+    font-size: 1rem;
+    font-family: Georgia, serif;
+}
+
+
