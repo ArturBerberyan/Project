@@ -25,6 +25,18 @@ export const ContactPage = () => {
   }, [fNameError, lNameError, subjectError])
 
 
+    const blurHandler = (e) => {
+      switch (e.target.name) {
+          case 'fName':
+              setFnameDirty(true)
+              break 
+          case 'lName':
+              setLnameDirty(true)
+              break
+          case 'subject':
+              setSubjectDirty(true)
+      }
+  }
 
     const fNameHandler = (e) => {
       setFname(e.target.value)
@@ -55,7 +67,7 @@ export const ContactPage = () => {
     const subjectHandler = (e) => {
       setSubject(e.target.value)
 
-      if(e.target.value.length < 3 || e.target.value.length > 8) {
+      if(e.target.value.length < 3 || e.target.value.length > 30) {
             setSubjectError('Subject must be longer than 3 and less than 8')
           if(!e.target.value) {
             setSubjectError('Subject cannot be empty')
@@ -81,15 +93,15 @@ export const ContactPage = () => {
 
             <label className="fname" htmlFor="fname">First Name</label>
             {(fNameDirty && fNameError) && <div className="error">{fNameError}</div>}
-            <input onChange={e => fNameHandler(e)}  value={fName} type="text" id="fname" name="fName" placeholder="Your name.." />
+            <input onChange={e => fNameHandler(e)} onBlur={e => blurHandler(e)} value={fName} type="text" id="fname" name="fName" placeholder="Your name.." />
 
             <label className="lname" htmlFor="lname">Last Name</label>
             {(lNameDirty && lNameError) && <div className="error">{lNameError}</div>}
-            <input onChange={e => lNameHandler(e)} value={lName} type="text" id="lname" name="lastname" placeholder="Your last name.." />
+            <input onChange={e => lNameHandler(e)} onBlur={e => blurHandler(e)} value={lName} type="text" id="lname" name="lName" placeholder="Your last name.." />
 
             <label className="subject" htmlFor="subject">Subject</label>
             {(subjectDirty && subjectError) && <div className="error">{subjectError}</div>}
-            <textarea onChange={e => subjectHandler(e)} value={subject} className="subject-text" id="subject" name="subject" placeholder="Write something.."></textarea>
+            <textarea onChange={e => subjectHandler(e)} onBlur={e => blurHandler(e)} value={subject} className="subject-text" id="subject" name="subject" placeholder="Write something.."></textarea>
 
             <button onClick={() => navigate('/home')} disabled={!formValid} className="submit" type="submit">SUBMIT</button>
 
